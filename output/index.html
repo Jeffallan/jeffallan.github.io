@@ -1,49 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>Jeff's Site</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
-        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Jeff's Site Atom Feed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./theme/css/main.css" />
+    
+ <title>Jeff's Site</title>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" 
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+        crossorigin="anonymous"></script>
 </head>
+<body id="PageTop">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Jeff's Site </a></h1>
-                <nav><ul>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-<h2>Pages</h2>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+ 
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top
+ bg-info" id="mainNav">
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+   <a class="navbar-brand js-scroll-trigger" href="./#PageTop"><img src="./theme/images/monogramframes_78_676_js.png" height="50px" width="50px">
+   </a>
+   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+   <ul class="navbar-nav ml-auto">
+   <li class="nav-item">
+   <a class="nav-link js-scroll-trigger" href="./#AboutMe">About Me</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link js-scroll-trigger" href="./#Interests">Interests</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link js-scroll-trigger" href="./#ContactMe">Contact</a>
+   </li>
+   </ul>
+   </div>
+   </nav>
+  <div class="container "> <!--d-flex justify-content-center align-items-center-->
+    <div class="row jumbotron">
+        <div class="col-md-12 text-center">
+        <img class="cropped-img" src="./theme/images/profile_img.jpg">
+        <h1 class="">Jeff Smolinski</h1>
+            <h2>Software Developer</h2>
+            <h2>Omaha, NE</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row" id="AboutMe">
+            <div class="col-md-12 jumbotron">
+                <h2 class="text-center">About Me</h2>
+            </div>
+            <div class="col-md-5">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat imperdiet lectus, in commodo dui. Curabitur euismod arcu elit, in pellentesque nunc pulvinar maximus. Nulla ornare tempus urna, non interdum urna aliquam suscipit. Nunc hendrerit, arcu cursus commodo semper, nibh sapien egestas quam, tempor elementum lacus metus non enim. Nunc suscipit augue risus, ut aliquet ligula porttitor in. Praesent nisi mi, sagittis ac tincidunt in, mollis interdum ipsum. Nullam lacus nunc, mattis ut quam eget, porta bibendum metus. Pellentesque molestie elit eget nibh mollis dapibus. Praesent vulputate posuere sagittis. In vitae volutpat velit.
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+Praesent aliquet facilisis magna. Vivamus sit amet lorem dapibus nisl hendrerit blandit. Sed vestibulum iaculis massa, vitae vehicula mi vehicula commodo. Maecenas faucibus, nisi at lacinia tincidunt, dui diam congue erat, placerat lobortis sem purus vel quam. Quisque commodo justo porta lacus vulputate, eu ultricies magna egestas. Fusce mattis orci vel eros pulvinar, hendrerit aliquam ex vestibulum. Maecenas ac ipsum a lacus tincidunt iaculis. Nunc suscipit diam vitae enim elementum, eu ornare sapien posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+</p>
+            </div>
+            <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
+           
+            <h3 class="text-center">Highlights</h3>
+           
+            <div class="align-self-center">
+            
+            <ul class="">
+                <li>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </li>
+            </ul>
+            
+            <ul class="">
+                <li>
+                    Phasellus non eros sed risus tempor iaculis.Sed volutpat nisl vel rhoncus dapibus.
+                </li>
+            </ul>
+            
+            <ul class="">
+                <li>
+                    Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.
+                </li>
+            </ul>
+            
+            <ul class="">
+                <li>
+                    Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.
+                </li>
+            </ul>
+        </div>
+        <hr>
+            </div>
+            
+        </div>
+<div class="row">
+        <div class="col-md-12 jumbotron" id="Interests">
+            <h2 class="text-center">Interests</h2>
+        </div>
+        <div class="col-md-5">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat imperdiet lectus, in commodo dui. Curabitur euismod arcu elit, in pellentesque nunc pulvinar maximus. Nulla ornare tempus urna, non interdum urna aliquam suscipit. Nunc hendrerit, arcu cursus commodo semper, nibh sapien egestas quam, tempor elementum lacus metus non enim. Nunc suscipit augue risus, ut aliquet ligula porttitor in. Praesent nisi mi, sagittis ac tincidunt in, mollis interdum ipsum. Nullam lacus nunc, mattis ut quam eget, porta bibendum metus. Pellentesque molestie elit eget nibh mollis dapibus. Praesent vulputate posuere sagittis. In vitae volutpat velit.
 
+Praesent aliquet facilisis magna. Vivamus sit amet lorem dapibus nisl hendrerit blandit. Sed vestibulum iaculis massa, vitae vehicula mi vehicula commodo. Maecenas faucibus, nisi at lacinia tincidunt, dui diam congue erat, placerat lobortis sem purus vel quam. Quisque commodo justo porta lacus vulputate, eu ultricies magna egestas. Fusce mattis orci vel eros pulvinar, hendrerit aliquam ex vestibulum. Maecenas ac ipsum a lacus tincidunt iaculis. Nunc suscipit diam vitae enim elementum, eu ornare sapien posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+</p>
+        </div>
+        <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
+       
+        <h3 class="text-center">Projects</h3>
+       
+        <div class="align-self-center">
+        
+        <ul class="">
+            <li>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </li>
+        </ul>
+        
+        <ul class="">
+            <li>
+                Phasellus non eros sed risus tempor iaculis.Sed volutpat nisl vel rhoncus dapibus.
+            </li>
+        </ul>
+        
+        <ul class="">
+            <li>
+                Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.
+            </li>
+        </ul>
+        
+        <ul class="">
+            <li>
+                Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.
+            </li>
+        </ul>
+    </div>
+    <h3 class="text-center">Presentations</h3>
+       
+    <div class="align-self-center">
+    
+    <ul class="">
+        <li>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </li>
+    </ul>
+    
+    <ul class="">
+        <li>
+            Phasellus non eros sed risus tempor iaculis.Sed volutpat nisl vel rhoncus dapibus.
+        </li>
+    </ul>
+    
+    <ul class="">
+        <li>
+            Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.
+        </li>
+    </ul>
+    
+    <ul class="">
+        <li>
+            Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.
+        </li>
+    </ul>
+</div>
+<hr>
+        </div>
+       
+        
+    </div>
+</div>
+  
+ 
 </body>
 </html>
