@@ -43,6 +43,7 @@ help:
 
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -t $(THEME) -s $(CONFFILE) $(PELICANOPTS)
+	ghp-import output
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
