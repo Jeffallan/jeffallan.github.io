@@ -39,7 +39,7 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 ABOUT_ME = """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat imperdiet lectus, in commodo dui. Curabitur euismod arcu elit, in pellentesque nunc pulvinar maximus. Nulla ornare tempus urna, non interdum urna aliquam suscipit. Nunc hendrerit, arcu cursus commodo semper, nibh sapien egestas quam, tempor elementum lacus metus non enim. Nunc suscipit augue risus, ut aliquet ligula porttitor in. Praesent nisi mi, sagittis ac tincidunt in, mollis interdum ipsum. Nullam lacus nunc, mattis ut quam eget, porta bibendum metus. Pellentesque molestie elit eget nibh mollis dapibus. Praesent vulputate posuere sagittis. In vitae volutpat velit.
 
