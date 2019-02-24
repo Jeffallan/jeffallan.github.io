@@ -1,80 +1,78 @@
-{% extends "base.html" %}
-
-{% block title %}{{ SITENAME }}{% endblock %}
-
-{% block content %}
-<div class="container "> <!--d-flex justify-content-center align-items-center-->
-    <div class="row jumbotron">
-        <div class="col-md-12 text-center">
-        <img class="cropped-img" src="{{ SITEURL }}/theme/images/profile_img.jpg">
-        <h1 class="">Jeff Smolinski</h1>
-            <h2>Software Developer</h2>
-            <h2>Omaha, NE</h2>
-            <hr>
-        </div>
+{% extends "base.html" %} {% block title %}{{ SITENAME }}{% endblock %} {% block
+content %}
+<div class="container ">
+  <!--d-flex justify-content-center align-items-center-->
+  <div class="row jumbotron">
+    <div class="col-md-12 text-center">
+      <hr />
+      <h1 class="">Jeff Smolinski</h1>
+      <img
+      class="cropped-img text-center"
+      src="{{ SITEURL }}/theme/images/headshot.png"
+    />
+      <h2>Software Developer In Omaha, NE</h2>
+      
+      <hr / >
+     
+      
     </div>
-    <div class="row" id="AboutMe">
-            <div class="col-md-12 jumbotron">
-                <h2 class="text-center">About Me</h2>
-            </div>
-            <div class="col-md-5">
-                <p>{{ ABOUT_ME }}</p>
-            </div>
-            <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
-           
-            <h3 class="text-center">Highlights</h3>
-           
-            <div class="align-self-center">
-            {%for h in HIGHLIGHTS %}
-            
-            <ul class="">
-                <li>
-                    {{ h }}
-                </li>
-            </ul>
-            {%endfor%}
-        </div>
-        <hr>
-            </div>
-            
-        </div>
-<div class="row">
-        <div class="col-md-12 jumbotron" id="Interests">
-            <h2 class="text-center">Interests</h2>
-        </div>
-        <div class="col-md-5">
-            <p>{{ ABOUT_ME }}</p>
-        </div>
-        <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
-       
-        <h3 class="text-center">Projects</h3>
-       
-        <div class="align-self-center">
-        {%for p in PROJECTS %}
-        
-        <ul class="">
-            <li>
-                {{ p }}
-            </li>
+  </div>
+  <div class="row" id="AboutMe">
+    <div class="col-md-12 jumbotron text-center">
+      <h2>About Me</h2>
+    </div>
+    <div class="col-md-5">
+      <p>{{ ABOUT_ME }}</p>
+    </div>
+    <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
+      <h3 class="text-center">Highlights</h3>
+
+      <div class="align-self-center">
+        {%for h in HIGHLIGHTS %}
+        <ul>
+          <li>
+            {{ h }}
+          </li>
         </ul>
         {%endfor%}
+      </div>
+      <hr />
     </div>
-    <h3 class="text-center">Presentations</h3>
-       
-    <div class="align-self-center">
-    {%for p in PRESENTATIONS %}
-    
-    <ul class="">
-        <li>
+  </div>
+  <div class="row">
+    <div class="col-md-12 jumbotron" id="Interests">
+      <h2 class="text-center">Interests</h2>
+    </div>
+    <div class="col-md-5">
+      <p>{{ ABOUT_ME }}</p>
+    </div>
+    <div class="col-md-6 offset-md-1 d-flex flex-column justify-content-around">
+      <h3 class="text-center">Projects</h3>
+
+      <div class="align-self-center">
+        {%for p in PROJECTS %}
+
+        <ul class="">
+          <li>
             {{ p }}
-        </li>
-    </ul>
-    {%endfor%}
-</div>
-<hr>
-        </div>
-       
-        
+          </li>
+        </ul>
+        {%endfor%}
+      </div>
+      <h3 class="text-center">Presentations</h3>
+
+      <div class="align-self-center">
+        {%for p in PRESENTATIONS %}
+
+        <ul class="">
+          <li>
+            {{ p }}
+          </li>
+        </ul>
+        {%endfor%}
+      </div>
+      <hr />
     </div>
+  </div>
 </div>
 {% endblock %}

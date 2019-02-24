@@ -19,6 +19,19 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# FormSpree
+
+# Formspree Setup
+# 
+# <form action="https://formspree.io/your@email.com" method="POST">
+#   <input type="text" name="name">
+#   <input type="email" name="_replyto">
+#   <input type="submit" value="Send">
+# </form>
+# 
+
+FORMSPREELINK = 'https://formspree.io/smolinskija@gmail.com'
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
