@@ -74,5 +74,26 @@ content %}
       <hr />
     </div>
   </div>
+  <div class="row jumbotron" id="ContactMe">
+      <div class="col-md-6 jumbotron text-center">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="col-md-6 ">
+        <form action="{{ FORMSPREELINK }}" method="POST">
+          <div class="form-group" >
+          <input class="form-control" type="text" name="name" placeholder="Name">
+          </div>
+          <div class="form-group" >
+            <input class="form-control" type="email" id="mail" name="_replyto" placeholder="Email">
+            </div>
+         
+          <div class="form-group">
+                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+              </div>
+            <button type="submit" class="btn btn-success float-right">Send</button>
+          </form>
+      </div>
+    </div>  
+    </div>
 </div>
 {% endblock %}
