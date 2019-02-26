@@ -1,0 +1,41 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+/*
+if you decide on a fixed-bottom class for the footer,
+add a margin to the body that matches the height of the footer
+
+body { 
+    margin-bottom: 50px;
+}
+*/
+
+footer {
+  height: 50px;
+}
+
+.cropped-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.jumbotron {
+  background-color: rgb(255, 255, 255, 1);
+}
+
+.sticky-top {
+  margin-bottom: 0.5em;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255, 255, 255, 1);
+}
+
+.navbar-dark .navbar-toggler {
+  color: rgb(255, 255, 255, 1);
+  border-color: rgb(255, 255, 255, 1);
+}
