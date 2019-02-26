@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Jeff Smolinski'
-SITENAME = "Jeff's Site"
+SITENAME = "Jeff's Cover Letter"
 SITEURL = 'https://jeffallan.github.io' #http://localhost:8000
 
 PATH = 'content'
@@ -41,28 +41,23 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-ABOUT_ME = """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis placerat imperdiet lectus, in commodo dui. Curabitur euismod arcu elit, in pellentesque nunc pulvinar maximus. Nulla ornare tempus urna, non interdum urna aliquam suscipit. Nunc hendrerit, arcu cursus commodo semper, nibh sapien egestas quam, tempor elementum lacus metus non enim. Nunc suscipit augue risus, ut aliquet ligula porttitor in. Praesent nisi mi, sagittis ac tincidunt in, mollis interdum ipsum. Nullam lacus nunc, mattis ut quam eget, porta bibendum metus. Pellentesque molestie elit eget nibh mollis dapibus. Praesent vulputate posuere sagittis. In vitae volutpat velit.
-
-Praesent aliquet facilisis magna. Vivamus sit amet lorem dapibus nisl hendrerit blandit. Sed vestibulum iaculis massa, vitae vehicula mi vehicula commodo. Maecenas faucibus, nisi at lacinia tincidunt, dui diam congue erat, placerat lobortis sem purus vel quam. Quisque commodo justo porta lacus vulputate, eu ultricies magna egestas. Fusce mattis orci vel eros pulvinar, hendrerit aliquam ex vestibulum. Maecenas ac ipsum a lacus tincidunt iaculis. Nunc suscipit diam vitae enim elementum, eu ornare sapien posuere. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+ABOUT_ME = """I am a self taught software developer with four years of experience who primarily writes in Python and Javascript.  I particularly enjoy developing with Scrapy, Django and Vue JS.
+The thing I love most about software development is finding those things that take a ton of manual effort and automating them.\n\n  
+I am currently a graduate IT student at the University of Nebraska at Omaha whose field of study is Cybersecurity.  
+I am looking for a role where I can practice or implement secure development strategies and learn from more experienced team members.      
 
 """
 
-HIGHLIGHTS = ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-'Phasellus non eros sed risus tempor iaculis.'
-'Sed volutpat nisl vel rhoncus dapibus.',
-'Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.',
-'Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.')
+HIGHLIGHTS = ('Authored a web scraper, using Scrapy, that yielded hundreds of thousands of lines of business contact data; saving hours of manual prospecting time.',
+'Wrote a Python script that automated a Big Commerce site\'s monthly upgrades of hunderds of products; saving numerous hours of manual upgrades.',
+'Deployed a Python package that performs calculations for fitness professionals.  With the help of this software I was able to effectively manage numerous individual\'s \
+diet exercise programs and helping them lose an average of 3% body fat in the first month.  This software decreased my preperation time from approximately two hours per month per client \
+to one hour per month per client',)
 
-INTERESTS = """"""
+INTERESTS = (('Co-organizer, Omaha Python User Group. ', 'The Omaha Python User Group is a local Meetup dedicated to the Python language.  Members present on various topics and participate in group project.'), 
+('Active member, Nullify. ', 'Nullify is the University of Nebraska at Omaha\'s Cybersecurity club.  The purpose of this club is to discuss electronic security topics and participate in capture the flag competitions.'), 
+('Avid martial artist. ', 'I currently train at Omaha Kali where which teaches Brazilian Jiu Jitsu, Muay Thai, the Filipino Martial Arts, and Jeet Kune Do.'),)
 
-PROJECTS = ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-'Phasellus non eros sed risus tempor iaculis.'
-'Sed volutpat nisl vel rhoncus dapibus.',
-'Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.',
-'Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.')
+PROJECTS = (( 'https://pypi.org/project/fitness-tools/','Fitness Tools' ),)
 
-PRESENTATIONS = ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-'Phasellus non eros sed risus tempor iaculis.'
-'Sed volutpat nisl vel rhoncus dapibus.',
-'Ut lacinia tortor porta, elementum enim eget, hendrerit turpis.',
-'Curabitur sollicitudin ligula in quam sodales, at lacinia metus commodo.')
+PRESENTATIONS = (('https://github.com/Jeffallan/Python-3-Magic-Methods', 'Python 3 Magic Methods'),)
