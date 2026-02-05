@@ -1,0 +1,94 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, tags } = post.data;
+---
+
+<BaseLayout title={title}>
+  <Navbar />
+
+  <article class="container py-5">
+    <header class="mb-4">
+      <h1 class="display-4">{title}</h1>
+      <p class="lead text-muted">{description}</p>
+      <div class="text-muted mb-3">
+        <time datetime={pubDate.toISOString()}>
+          {pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        {updatedDate && (
+          <span class="ml-3">
+            (Updated: <time datetime={updatedDate.toISOString()}>
+              {updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>)
+          </span>
+        )}
+      </div>
+      {tags.length > 0 && (
+        <div class="mb-3">
+          {tags.map((tag) => (
+            <span class="badge badge-info mr-1">{tag}</span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    {heroImage && (
+      <img src={heroImage} alt={title} class="img-fluid rounded mb-4" />
+    )}
+
+    <div class="blog-content">
+      <slot />
+    </div>
+
+    <hr class="my-5" />
+
+    <a href="/blog" class="btn btn-outline-info">&larr; Back to Blog</a>
+  </article>
+
+  <div class="container-fluid pt-5 pl-5 pr-5">
+    <div class="row d-flex">
+      <Contact />
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .blog-content :global(h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .blog-content :global(pre) {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .blog-content :global(code) {
+    background: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+  }
+
+  .blog-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+</style>

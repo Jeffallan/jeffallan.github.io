@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Navbar />
+
+  <div class="container-fluid pt-5 pl-5 pr-5">
+    <Hero />
+
+    <div class="row">
+      <Experience />
+      <Sidebar />
+    </div>
+
+    <div class="row d-flex">
+      <Projects />
+      <Contact />
+    </div>
+  </div>
+
+  <Footer />
+</BaseLayout>
