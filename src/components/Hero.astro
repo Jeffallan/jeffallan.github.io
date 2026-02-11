@@ -2,49 +2,36 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<div class="row pb-5">
-  <hr />
-  <div class="col-md-4 d-flex flex-column justify-content-around">
-    <h1>Jeff Smolinski</h1>
-    <h2>Fullstack Engineer</h2>
-    <h2>Security Engineer</h2>
-    <div class="social-icons d-flex flex-wrap mt-3">
-      <a href="https://github.com/Jeffallan" target="_blank" rel="noopener noreferrer" class="social-link mr-3" aria-label="GitHub">
+<div class="row pb-5 hero-section">
+  <div class="col-md-4 d-flex flex-column justify-content-center">
+    <h1 class="hero-name">Jeff Smolinski</h1>
+    <h2 class="hero-title">Fullstack Engineer</h2>
+    <h2 class="hero-title">Security Engineer</h2>
+    <div class="social-icons d-flex flex-wrap mt-4">
+      <a href="https://github.com/Jeffallan" target="_blank" rel="noopener noreferrer" class="social-link mr-2 mb-2" aria-label="GitHub">
         <Icon name="simple-icons:github" class="social-icon" />
       </a>
-      <a href="https://linkedin.com/in/jeff-smolinski" target="_blank" rel="noopener noreferrer" class="social-link mr-3" aria-label="LinkedIn">
+      <a href="https://linkedin.com/in/jeff-smolinski" target="_blank" rel="noopener noreferrer" class="social-link mr-2 mb-2" aria-label="LinkedIn">
         <Icon name="simple-icons:linkedin" class="social-icon" />
       </a>
-      <a href="https://x.com/j3ffallan" target="_blank" rel="noopener noreferrer" class="social-link mr-3" aria-label="X">
+      <a href="https://x.com/j3ffallan" target="_blank" rel="noopener noreferrer" class="social-link mr-2 mb-2" aria-label="X">
         <Icon name="simple-icons:x" class="social-icon" />
       </a>
-      <a href="https://bsky.app/profile/jeffallan.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link mr-3" aria-label="Bluesky">
+      <a href="https://bsky.app/profile/jeffallan.bsky.social" target="_blank" rel="noopener noreferrer" class="social-link mr-2 mb-2" aria-label="Bluesky">
         <Icon name="simple-icons:bluesky" class="social-icon" />
       </a>
-      <a href="https://news.ycombinator.com/user?id=Jeffallan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Hacker News">
+      <a href="https://news.ycombinator.com/user?id=Jeffallan" target="_blank" rel="noopener noreferrer" class="social-link mb-2" aria-label="Hacker News">
         <Icon name="simple-icons:ycombinator" class="social-icon" />
       </a>
     </div>
   </div>
-  <div class="col-md-4 d-flex flex-column justify-content-around align-items-center">
-    <img class="cropped-img text-center" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
+  <div class="col-md-4 d-flex flex-column justify-content-center align-items-center py-4">
+    <img class="cropped-img" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
   </div>
-  <div class="col-md-4 d-flex flex-column justify-content-around">
-    <p class="text-center">Python | Django | Django Rest Framework | Javascript | Vue JS | React | Docker | Cloud
-      Security AWS | GCP | Azure | Security Policy | Application Security | Reverse Engineering | Threat Modeling</p>
+  <div class="col-md-4 d-flex flex-column justify-content-center">
+    <p class="skills-text text-center text-md-left">
+      <strong>Python</strong> · Django · Django Rest Framework · <strong>Javascript</strong> · Vue JS · React · Docker ·
+      <strong>Cloud Security</strong> · AWS · GCP · Azure · Security Policy · Application Security · Reverse Engineering · Threat Modeling
+    </p>
   </div>
-  <hr />
 </div>
-
-<style>
-  .social-icon {
-    width: 28px;
-    height: 28px;
-    color: #333;
-    transition: color 0.2s ease;
-  }
-
-  .social-link:hover .social-icon {
-    color: #17a2b8;
-  }
-</style>
