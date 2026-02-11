@@ -1,10 +1,26 @@
 ---
+interface Props {
+  skillsInstalls?: string;
+}
+
+const { skillsInstalls = '' } = Astro.props;
 ---
 
-<div class="col-md-8 jumbotron">
+<div class="col-12 jumbotron">
   <h2 class="text-center" id="Projects">Open Source Projects</h2>
-  <div class="mt-5 card-deck">
-    <div class="card mb-3">
+  <div class="mt-5 d-flex justify-content-between">
+    <div class="card mb-3 flex-fill mx-2">
+      <div class="card-body">
+        <h5 class="card-title">claude-skills</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>
+          {skillsInstalls && <img src={`https://img.shields.io/badge/downloads-${skillsInstalls}-blue`} alt={`${skillsInstalls} downloads`} class="ml-2" />}
+        </h6>
+        <p class="card-text">Specialized skills for full-stack developers. Transform Claude Code into your expert pair programmer.</p>
+        <a href="https://github.com/Jeffallan/claude-skills" class="card-link">View on GitHub</a>
+      </div>
+    </div>
+    <div class="card mb-3 flex-fill mx-2">
       <div class="card-body">
         <h5 class="card-title">badfiles</h5>
         <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/badfiles" alt="badfiles downloads" /></h6>
@@ -12,7 +28,7 @@
         <a href="https://pypi.org/project/badfiles" class="card-link">View on PyPI</a>
       </div>
     </div>
-    <div class="card mb-3">
+    <div class="card mb-3 flex-fill mx-2">
       <div class="card-body">
         <h5 class="card-title">fitness-tools</h5>
         <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/fitness-tools" alt="fitness-tools downloads" /></h6>
