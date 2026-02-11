@@ -94,4 +94,43 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = post.data;
     background: none;
     padding: 0;
   }
+
+  /* Footnotes section */
+  .blog-content :global(.footnotes) {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--teal-primary);
+    font-size: 0.9rem;
+  }
+
+  .blog-content :global(.footnotes ol) {
+    padding-left: 1.25rem;
+    list-style: decimal;
+  }
+
+  .blog-content :global(.footnotes li) {
+    padding-left: 0.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+  }
+
+  .blog-content :global(.footnotes li::before) {
+    display: none;
+  }
+
+  /* Superscript footnote references in body text */
+  .blog-content :global(a[data-footnote-ref]) {
+    font-size: 0.75em;
+    vertical-align: super;
+    text-decoration: none;
+    color: var(--teal-primary);
+    font-weight: 600;
+  }
+
+  /* Back-to-content arrows in footnotes */
+  .blog-content :global(a[data-footnote-backref]) {
+    text-decoration: none;
+    color: var(--teal-primary);
+    margin-left: 0.25rem;
+  }
 </style>

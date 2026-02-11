@@ -4,7 +4,7 @@ description: "Learn how to leverage the Composition API to build more maintainab
 pubDate: 2024-03-10
 heroImage: "/images/blog/placeholder-3.svg"
 tags: ["vue", "javascript", "frontend"]
-draft: false
+draft: true
 ---
 
 ## Introduction

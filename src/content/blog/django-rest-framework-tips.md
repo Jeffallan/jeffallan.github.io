@@ -4,7 +4,7 @@ description: "Practical tips for building robust APIs with Django REST Framework
 pubDate: 2024-02-20
 heroImage: "/images/blog/placeholder-2.svg"
 tags: ["django", "python", "api", "backend"]
-draft: false
+draft: true
 ---
 
 ## Introduction
