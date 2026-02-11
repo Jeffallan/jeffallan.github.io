@@ -158,7 +158,8 @@ p {
    NAVBAR - Enhanced Gradient
    ============================================ */
 .navbar {
-  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 50%, var(--teal-light) 100%) !important;
+  /* background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 50%, var(--teal-light) 100%) !important; */
+  background: var(--teal-primary) !important;
   box-shadow: var(--shadow-md);
   padding: 0.75rem 1.5rem;
 }
@@ -540,7 +541,8 @@ h2.text-center::after {
    ============================================ */
 footer {
   height: 60px;
-  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 100%);
+  /* background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 100%); */
+  background: var(--teal-primary);
   margin-top: 3rem;
 }
 
