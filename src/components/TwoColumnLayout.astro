@@ -1,0 +1,22 @@
+---
+interface Props {
+  leftColClass?: string;
+  rightColClass?: string;
+  rowClass?: string;
+}
+
+const {
+  leftColClass = 'col-md-6',
+  rightColClass = 'col-md-6',
+  rowClass = '',
+} = Astro.props;
+---
+
+<div class={`row ${rowClass}`.trim()}>
+  <div class={leftColClass}>
+    <slot name="left" />
+  </div>
+  <div class={rightColClass}>
+    <slot name="right" />
+  </div>
+</div>

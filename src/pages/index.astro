@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import Experience from '../components/Experience.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Projects from '../components/Projects.astro';
+import TwoColumnLayout from '../components/TwoColumnLayout.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -22,8 +23,29 @@ import Footer from '../components/Footer.astro';
 
     <div class="row d-flex">
       <Projects />
-      <Contact />
     </div>
+
+    <TwoColumnLayout rowClass="align-items-center">
+      <div slot="left" class="d-flex align-items-center">
+        <div class="flex-shrink-0 mr-4">
+          <img class="bio-headshot" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
+        </div>
+        <div class="flex-grow-1">
+          <h3>Jeff Smolinski</h3>
+          <p>
+            Fullstack and security engineer with a passion for building robust, scalable web
+            applications. Experienced across the entire development lifecycle — from designing
+            RESTful APIs and cloud infrastructure to crafting responsive front-end interfaces.
+            Committed to writing clean, secure code and continuously improving through open-source
+            contributions and ongoing learning.
+          </p>
+        </div>
+      </div>
+      <div slot="right">
+        <h2 id="ContactMe">Get In Touch</h2>
+        <Contact />
+      </div>
+    </TwoColumnLayout>
   </div>
 
   <Footer />
