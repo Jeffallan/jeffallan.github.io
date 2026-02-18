@@ -8,33 +8,39 @@ const { skillsInstalls = '' } = Astro.props;
 
 <div class="col-12 jumbotron">
   <h2 class="text-center" id="Projects">Open Source Projects</h2>
-  <div class="mt-5 d-flex justify-content-between">
-    <div class="card mb-3 flex-fill mx-2">
-      <div class="card-body">
-        <h5 class="card-title">claude-skills</h5>
-        <h6 class="card-subtitle mb-2 text-muted">
-          <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>
-          {skillsInstalls && <img src={`https://img.shields.io/badge/downloads-${skillsInstalls}-blue`} alt={`${skillsInstalls} downloads`} class="ml-2" />}
-        </h6>
-        <p class="card-text">Specialized skills for full-stack developers. Transform Claude Code into your expert pair programmer.</p>
-        <a href="https://github.com/Jeffallan/claude-skills" class="card-link">View on GitHub</a>
+  <div class="row mt-5">
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">claude-skills</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>
+            {skillsInstalls && <img src={`https://img.shields.io/badge/downloads-${skillsInstalls}-blue`} alt={`${skillsInstalls} downloads`} class="ml-2" />}
+          </h6>
+          <p class="card-text">Specialized skills for full-stack developers. Transform Claude Code into your expert pair programmer.</p>
+          <a href="https://github.com/Jeffallan/claude-skills" class="card-link">View on GitHub</a>
+        </div>
       </div>
     </div>
-    <div class="card mb-3 flex-fill mx-2">
-      <div class="card-body">
-        <h5 class="card-title">badfiles</h5>
-        <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/badfiles" alt="badfiles downloads" /></h6>
-        <p class="card-text">A malicious file detection engine written with Python and Yara.</p>
-        <a href="https://pypi.org/project/badfiles" class="card-link">View on PyPI</a>
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">badfiles</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/badfiles" alt="badfiles downloads" /></h6>
+          <p class="card-text">A malicious file detection engine written with Python and Yara.</p>
+          <a href="https://pypi.org/project/badfiles" class="card-link">View on PyPI</a>
+        </div>
       </div>
     </div>
-    <div class="card mb-3 flex-fill mx-2">
-      <div class="card-body">
-        <h5 class="card-title">fitness-tools</h5>
-        <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/fitness-tools" alt="fitness-tools downloads" /></h6>
-        <p class="card-text">A library to help personal trainers optimize client training and macronutrient
-          requirements.</p>
-        <a href="https://pypi.org/project/fitness-tools" class="card-link">View on PyPI</a>
+    <div class="col-md-4 mb-3">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">fitness-tools</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/fitness-tools" alt="fitness-tools downloads" /></h6>
+          <p class="card-text">A library to help personal trainers optimize client training and macronutrient
+            requirements.</p>
+          <a href="https://pypi.org/project/fitness-tools" class="card-link">View on PyPI</a>
+        </div>
       </div>
     </div>
   </div>
