@@ -63,13 +63,10 @@ const totalFormatted = Math.floor(total / 1000).toLocaleString() + ',000';
     </div>
 
     <TwoColumnLayout rowClass="align-items-center">
-      <div slot="left" class="d-flex align-items-center">
-        <div class="flex-shrink-0 mr-4">
-          <img class="bio-headshot" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
-        </div>
-        <div class="flex-grow-1">
-          <h3>Jeff Smolinski</h3>
-          <p>
+      <div slot="left">
+        <img class="bio-headshot" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
+        <h3>Jeff Smolinski</h3>
+        <p>
             Principal Consultant at Synergetic Solutions, specializing in secure platform
             engineering and GRC programs for organizations handling sensitive data. With an MS
             in Cybersecurity (Cyber Operations) from UNO, he has led platforms achieving $1M ARR
@@ -78,7 +75,6 @@ const totalFormatted = Math.floor(total / 1000).toLocaleString() + ',000';
             impacting 249 repositories and published peer-reviewed research on software
             fingerprinting. His open-source projects have over {totalFormatted} downloads combined.
           </p>
-        </div>
       </div>
       <div slot="right">
         <h2 id="ContactMe">Get In Touch</h2>
