@@ -3,3 +3,4 @@ Allow: /
 
 Sitemap: https://jeffallan.github.io/sitemap-index.xml
 Sitemap: https://jeffallan.github.io/claude-skills/sitemap-index.xml
+Sitemap: https://jeffallan.github.io/writing-with-agents/sitemap-index.xml
