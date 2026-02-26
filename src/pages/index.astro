@@ -9,42 +9,22 @@ import TwoColumnLayout from '../components/TwoColumnLayout.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 
-function parseCount(str: string): number {
-  str = str.trim().toLowerCase();
-  if (str.endsWith('k')) return Math.round(parseFloat(str) * 1000);
-  if (str.endsWith('m')) return Math.round(parseFloat(str) * 1000000);
-  return parseInt(str.replace(/,/g, ''), 10);
-}
-
-async function fetchPyPIDownloads(packageName: string): Promise<number> {
-  try {
-    const res = await fetch(`https://img.shields.io/pepy/dt/${packageName}`);
-    const svg = await res.text();
-    const match = svg.match(/aria-label="downloads:\s*([^"]+)"/);
-    return match ? parseCount(match[1]) : 0;
-  } catch { return 0; }
-}
-
-async function fetchSkillsInstalls(): Promise<{ count: number; display: string }> {
+async function fetchSkillsInstalls(): Promise<string> {
   try {
     const res = await fetch('https://skills.sh/jeffallan/claude-skills');
     const html = await res.text();
     const match = html.match(/([\d,.]+[kKmM]?)[^a-z]*total\s*installs/i);
-    if (!match) return { count: 0, display: '' };
-    const count = parseCount(match[1]);
-    const display = Math.round(count / 1000) + 'K';
-    return { count, display };
-  } catch { return { count: 0, display: '' }; }
+    if (!match) return '';
+    const str = match[1].trim().toLowerCase();
+    let count = 0;
+    if (str.endsWith('k')) count = Math.round(parseFloat(str) * 1000);
+    else if (str.endsWith('m')) count = Math.round(parseFloat(str) * 1000000);
+    else count = parseInt(str.replace(/,/g, ''), 10);
+    return Math.round(count / 1000) + 'K';
+  } catch { return ''; }
 }
 
-const [badfiles, fitnessTools, skills] = await Promise.all([
-  fetchPyPIDownloads('badfiles'),
-  fetchPyPIDownloads('fitness-tools'),
-  fetchSkillsInstalls(),
-]);
-
-const total = badfiles + fitnessTools + skills.count;
-const totalFormatted = Math.floor(total / 1000).toLocaleString() + ',000';
+const skillsInstalls = await fetchSkillsInstalls();
 ---
 
 <BaseLayout>
@@ -59,7 +39,7 @@ const totalFormatted = Math.floor(total / 1000).toLocaleString() + ',000';
     </div>
 
     <div class="row d-flex">
-      <Projects skillsInstalls={skills.display} />
+      <Projects skillsInstalls={skillsInstalls} />
     </div>
 
     <TwoColumnLayout rowClass="align-items-center">
@@ -73,7 +53,7 @@ const totalFormatted = Math.floor(total / 1000).toLocaleString() + ',000';
             in their first year of operation, implemented SOC 2/HIPAA compliance programs, and
             secured $375K+ in grant funding. As a security researcher, he has disclosed two CVEs
             impacting 249 repositories and published peer-reviewed research on software
-            fingerprinting. His open-source projects have over {totalFormatted} downloads combined.
+            fingerprinting. His open-source projects have over 100,000 downloads combined.
           </p>
       </div>
       <div slot="right">
