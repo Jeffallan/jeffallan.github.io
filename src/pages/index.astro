@@ -9,22 +9,51 @@ import TwoColumnLayout from '../components/TwoColumnLayout.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 
-async function fetchSkillsInstalls(): Promise<string> {
+// Minimum download count to claim if build-time fetches fail. Keeps the bio
+// from regressing below the previously published number.
+const DOWNLOADS_BASELINE = 100000;
+
+// Parse a human-readable count ("38k", "287.5K", "1.2M", "1,234") into a number.
+function parseCount(raw: string): number {
+  const str = raw.trim().toLowerCase();
+  if (str.endsWith('k')) return Math.round(parseFloat(str) * 1000);
+  if (str.endsWith('m')) return Math.round(parseFloat(str) * 1000000);
+  return parseInt(str.replace(/,/g, ''), 10) || 0;
+}
+
+// claude-skills installs from skills.sh. Returns a count, 0 on failure.
+async function fetchSkillsInstalls(): Promise<number> {
   try {
     const res = await fetch('https://skills.sh/jeffallan/claude-skills');
     const html = await res.text();
     const match = html.match(/([\d,.]+[kKmM]?)[^a-z]*total\s*installs/i);
-    if (!match) return '';
-    const str = match[1].trim().toLowerCase();
-    let count = 0;
-    if (str.endsWith('k')) count = Math.round(parseFloat(str) * 1000);
-    else if (str.endsWith('m')) count = Math.round(parseFloat(str) * 1000000);
-    else count = parseInt(str.replace(/,/g, ''), 10);
-    return Math.round(count / 1000) + 'K';
-  } catch { return ''; }
+    return match ? parseCount(match[1]) : 0;
+  } catch { return 0; }
 }
 
-const skillsInstalls = await fetchSkillsInstalls();
+// PyPI downloads from the pepy.tech badge SVG. Returns a count, 0 on failure.
+async function fetchPepyDownloads(project: string): Promise<number> {
+  try {
+    const res = await fetch(`https://static.pepy.tech/badge/${project}`);
+    const svg = await res.text();
+    const match = svg.match(/>\s*([\d][\d.,]*[kKmM]?)\s*<\/text>/i);
+    return match ? parseCount(match[1]) : 0;
+  } catch { return 0; }
+}
+
+const [skillsInstallsCount, badfilesCount, fitnessCount] = await Promise.all([
+  fetchSkillsInstalls(),
+  fetchPepyDownloads('badfiles'),
+  fetchPepyDownloads('fitness-tools'),
+]);
+
+// Badge label for the claude-skills card (e.g. "288K"), empty if the fetch failed.
+const skillsInstalls = skillsInstallsCount ? Math.round(skillsInstallsCount / 1000) + 'K' : '';
+
+// Total downloads, rounded down to the nearest 100K for the bio sentence.
+const totalDownloads = skillsInstallsCount + badfilesCount + fitnessCount;
+const flooredDownloads = Math.floor(totalDownloads / 100000) * 100000;
+const downloadsLabel = Math.max(flooredDownloads, DOWNLOADS_BASELINE).toLocaleString('en-US');
 ---
 
 <BaseLayout>
@@ -53,7 +82,7 @@ const skillsInstalls = await fetchSkillsInstalls();
             in their first year of operation, implemented SOC 2/HIPAA compliance programs, and
             secured $375K+ in grant funding. As a security researcher, he has disclosed two CVEs
             impacting 249 repositories and published peer-reviewed research on software
-            fingerprinting. His open-source projects have over 100,000 downloads combined.
+            fingerprinting. His open-source projects have over {downloadsLabel} downloads combined.
           </p>
       </div>
       <div slot="right">
