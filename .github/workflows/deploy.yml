@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [master]
+  schedule:
+    # Daily at 6:00 AM Central (11:00 UTC; GitHub cron is UTC-only, so this is 5:00 AM during CST)
+    - cron: "0 11 * * *"
   workflow_dispatch:
 
 permissions:
