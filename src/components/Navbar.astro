@@ -29,3 +29,13 @@
     </ul>
   </div>
 </nav>
+
+<script>
+  // Opens and closes the menu on narrow screens.
+  const toggler = document.querySelector<HTMLButtonElement>('#mainNav .navbar-toggler');
+  const menu = document.getElementById('navbarResponsive');
+  toggler?.addEventListener('click', () => {
+    const open = menu?.classList.toggle('show') ?? false;
+    toggler.setAttribute('aria-expanded', String(open));
+  });
+</script>
