@@ -1,9 +1,16 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "Jeff's Cover Letter" } = Astro.props;
+const {
+  title = 'Jeff Smolinski | Fullstack and Security Engineer',
+  description = 'Jeff Smolinski builds secure platforms and GRC programs for organizations that handle sensitive data. Principal Consultant at Synergetic Solutions.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/images/headshot.png', Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -32,6 +39,17 @@ const { title = "Jeff's Cover Letter" } = Astro.props;
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image} />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- JSON-LD graph (Person, WebSite) goes here: W-08 -->
 </head>
 
 <body id="PageTop">
