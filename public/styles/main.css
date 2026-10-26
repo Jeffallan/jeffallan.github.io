@@ -611,10 +611,8 @@ h2.text-center::after {
 /* ============================================
    FOOTER
    ============================================ */
-footer {
-  height: 60px;
-  /* background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-primary) 100%); */
-  background: var(--teal-primary);
+/* The footer is site-footer's SiteFooter (shared with the docs sites) */
+.site-footer {
   margin-top: 3rem;
 }
 
@@ -663,14 +661,15 @@ ul:not(.navbar-nav):not(.list-unstyled) ul li::before {
 /* ============================================
    LINKS
    ============================================ */
-a:not(.btn):not(.nav-link):not(.navbar-brand):not(.social-link):not(.card-link) {
+/* Shared site-* components (menu, footer) style their own links */
+a:not(.btn):not(.nav-link):not(.navbar-brand):not(.social-link):not(.card-link):not([class*='site-']) {
   color: var(--teal-primary);
   text-decoration: none;
   position: relative;
   transition: color var(--transition-fast);
 }
 
-a:not(.btn):not(.nav-link):not(.navbar-brand):not(.social-link):not(.card-link):hover {
+a:not(.btn):not(.nav-link):not(.navbar-brand):not(.social-link):not(.card-link):not([class*='site-']):hover {
   color: var(--teal-dark);
 }
 
