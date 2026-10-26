@@ -14,7 +14,7 @@ const { skillsInstalls = '' } = Astro.props;
         <div class="card-body">
           <h5 class="card-title">claude-skills</h5>
           <h6 class="card-subtitle mb-2 text-muted">
-            <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>
+            <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>{' '}
             {skillsInstalls && <img src={`https://img.shields.io/badge/downloads-${skillsInstalls}-blue`} alt={`${skillsInstalls} downloads`} class="ml-2" />}
           </h6>
           <p class="card-text">Specialized skills for full-stack developers. Transform Claude Code into your expert pair programmer.</p>
