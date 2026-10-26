@@ -6,7 +6,7 @@ import Experience from '../components/Experience.astro';
 import Sidebar from '../components/Sidebar.astro';
 import Projects from '../components/Projects.astro';
 import TwoColumnLayout from '../components/TwoColumnLayout.astro';
-import Contact from '../components/Contact.astro';
+import ContactForm from '../components/site-contact/ContactForm.astro';
 import Footer from '../components/Footer.astro';
 
 // Minimum download count to claim if build-time fetches fail. Keeps the bio
@@ -87,7 +87,13 @@ const downloadsLabel = Math.max(flooredDownloads, DOWNLOADS_BASELINE).toLocaleSt
       </div>
       <div slot="right">
         <h2 id="ContactMe">Get In Touch</h2>
-        <Contact />
+        <ContactForm
+          site="hub"
+          cta="contact-section"
+          groupClass="form-group"
+          fieldClass="form-control"
+          buttonClass="btn btn-success"
+        />
       </div>
     </TwoColumnLayout>
   </div>

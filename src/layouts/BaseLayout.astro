@@ -1,4 +1,7 @@
 ---
+import '../components/site-style/tokens.css';
+import ThemeScript from '../components/site-style/ThemeScript.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -18,6 +21,7 @@ const image = new URL('/images/headshot.png', Astro.site);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <ThemeScript />
   <meta name="google-site-verification" content="F01KE0U-EHMrEHtYf5nOpt5tlbWeoMoil6Wkp0x5ONQ" />
 
   <!-- Google Analytics -->
