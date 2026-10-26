@@ -210,6 +210,15 @@ p {
   margin-bottom: 0;
 }
 
+/* Projects menu (site-nav): opens in place inside the collapsed mobile menu */
+@media (max-width: 991.98px) {
+  #mainNav .site-nav ul.site-nav-list {
+    position: static;
+    margin-bottom: 0.5rem;
+    box-shadow: none;
+  }
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */

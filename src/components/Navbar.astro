@@ -1,4 +1,5 @@
 ---
+import SitesMenu from './site-nav/SitesMenu.astro';
 ---
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-info" id="mainNav">
@@ -16,7 +17,9 @@
         <a class="nav-link js-scroll-trigger" href="/#AboutMe">About Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/#Projects">Projects</a>
+        <SitesMenu label="Projects" home={false} buttonClass="nav-link">
+          <li><a class="site-nav-link" href="/#Projects">All projects</a></li>
+        </SitesMenu>
       </li>
       <!-- Blog nav item - uncomment when ready
       <li class="nav-item">
