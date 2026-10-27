@@ -146,7 +146,7 @@
       {
         "name": "claude-skills",
         "url": "https://github.com/Jeffallan/claude-skills",
-        "count": "434K+ installs",
+        "count": "435K+ installs",
         "text": "67 specialized skills for full-stack developers."
       },
       {
@@ -203,19 +203,21 @@
       "AI Strategy & Implementation",
       "Data Engineering",
       "Security Engineering",
+      "Incident Response & Remediation",
       "GRC Strategy & Implementation",
       "Technical Due Diligence",
       "SDLC Strategy & Implementation",
       "Fractional CTO & CISO Services"
     ],
     "competencies": [
-      "We build and secure the software and data systems our clients' core operations depend on.",
-      "We bring experience from fintech, healthcare, media, public safety and embedded systems."
+      "We build and secure the software, data and governance processes our clients' core operations depend on.",
+      "We bring experience from fintech, healthtech, public safety, and embedded systems."
     ],
     "differentiators": [
       "Our principal has served as CTO and board member of a client company and has led client GRC programs in a fractional CISO role.",
       "We take a collaborative, proactive approach when solving our clients' challenges. The end result: practical solutions ensuring both client satisfaction and business continuity.",
-      "Agentic SDLC delivery: one developer averaging 80+ tickets and 12 merged pull requests a week, with every phase leaving a reviewable artifact."
+      "Agentic SDLC delivery: one developer averaging 80+ tickets and 12 merged pull requests a week per project, with every phase leaving a reviewable artifact.",
+      "Legacy codebase intake: preparing legacy codebases for agentic development with a repeatable procedure including proper documentation, unit tests, end-to-end tests, and security tests."
     ],
     "industries": [
       "FinTech",
@@ -238,6 +240,9 @@
         "text": "Discovering and responsibly disclosing software vulnerabilities"
       },
       {
+        "text": "Leading incident response and forensic investigations for production security incidents"
+      },
+      {
         "text": "Co-authoring peer-reviewed research published at the International Conference on Cyber Warfare and Security"
       },
       {
@@ -250,7 +255,7 @@
         "text": "Developing custom ETL pipelines across healthcare, fintech, and security sectors, establishing the data foundations required for AI and machine learning adoption"
       },
       {
-        "text": "Shipping mobile applications from concept to app store deployment"
+        "text": "Shipping multiple mobile applications from concept to app store deployment within 4 months"
       },
       {
         "text": "Building and publishing a compliance-signal directory covering 4,400+ organizations"
@@ -270,7 +275,10 @@
       "technologies": [
         "Vue.js",
         "Django REST Framework",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Pandas",
+        "openpyxl",
+        "Microsoft Azure"
       ],
       "bullets": [
         {
@@ -316,6 +324,9 @@
         "TypeScript",
         "React Native",
         "PostgreSQL",
+        "GCP",
+        "Firebase",
+        "Terraform",
         "Claude Code"
       ],
       "bullets": [
@@ -358,6 +369,7 @@
       "technologies": [
         "React",
         "Go",
+        "GCP",
         "Firebase",
         "Google BigQuery",
         "Claude Code"
@@ -402,7 +414,8 @@
         "GeoPandas",
         "TypeScript",
         "React",
-        "PostgreSQL"
+        "PostgreSQL",
+        "Private VPS"
       ],
       "bullets": [
         {
@@ -430,6 +443,7 @@
       "technologies": [
         "Next.js",
         "Neo4j",
+        "Private VPS",
         "Claude Code"
       ],
       "bullets": [
@@ -498,15 +512,13 @@
         "Claude Code",
         "Agent Skills",
         "GitHub Actions",
-        "Astro"
+        "Astro",
+        "Cloudflare Pages"
       ],
       "description": "Incident response and disaster recovery tabletop exercises drawn from current incidents.",
       "bullets": [
         {
           "text": "Built a weekly agentic content pipeline turning real security incidents into tabletop exercise scenarios: scheduled Claude intake with review and greenlight steps, lint and rubric checks enforced in code, and automated publishing and social export."
-        },
-        {
-          "text": "Took 22 incident response and disaster recovery scenarios from idea to draft."
         }
       ]
     }
