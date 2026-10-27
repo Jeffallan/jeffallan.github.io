@@ -9,51 +9,7 @@ import TwoColumnLayout from '../components/TwoColumnLayout.astro';
 import ContactForm from '../components/site-contact/ContactForm.astro';
 import Footer from '../components/Footer.astro';
 
-// Minimum download count to claim if build-time fetches fail. Keeps the bio
-// from regressing below the previously published number.
-const DOWNLOADS_BASELINE = 100000;
-
-// Parse a human-readable count ("38k", "287.5K", "1.2M", "1,234") into a number.
-function parseCount(raw: string): number {
-  const str = raw.trim().toLowerCase();
-  if (str.endsWith('k')) return Math.round(parseFloat(str) * 1000);
-  if (str.endsWith('m')) return Math.round(parseFloat(str) * 1000000);
-  return parseInt(str.replace(/,/g, ''), 10) || 0;
-}
-
-// claude-skills installs from skills.sh. Returns a count, 0 on failure.
-async function fetchSkillsInstalls(): Promise<number> {
-  try {
-    const res = await fetch('https://skills.sh/jeffallan/claude-skills');
-    const html = await res.text();
-    const match = html.match(/([\d,.]+[kKmM]?)[^a-z]*total\s*installs/i);
-    return match ? parseCount(match[1]) : 0;
-  } catch { return 0; }
-}
-
-// PyPI downloads from the pepy.tech badge SVG. Returns a count, 0 on failure.
-async function fetchPepyDownloads(project: string): Promise<number> {
-  try {
-    const res = await fetch(`https://static.pepy.tech/badge/${project}`);
-    const svg = await res.text();
-    const match = svg.match(/>\s*([\d][\d.,]*[kKmM]?)\s*<\/text>/i);
-    return match ? parseCount(match[1]) : 0;
-  } catch { return 0; }
-}
-
-const [skillsInstallsCount, badfilesCount, fitnessCount] = await Promise.all([
-  fetchSkillsInstalls(),
-  fetchPepyDownloads('badfiles'),
-  fetchPepyDownloads('fitness-tools'),
-]);
-
-// Badge label for the claude-skills card (e.g. "288K"), empty if the fetch failed.
-const skillsInstalls = skillsInstallsCount ? Math.round(skillsInstallsCount / 1000) + 'K' : '';
-
-// Total downloads, rounded down to the nearest 100K for the bio sentence.
-const totalDownloads = skillsInstallsCount + badfilesCount + fitnessCount;
-const flooredDownloads = Math.floor(totalDownloads / 100000) * 100000;
-const downloadsLabel = Math.max(flooredDownloads, DOWNLOADS_BASELINE).toLocaleString('en-US');
+import career from '../components/site-career/career.json';
 ---
 
 <BaseLayout>
@@ -68,22 +24,14 @@ const downloadsLabel = Math.max(flooredDownloads, DOWNLOADS_BASELINE).toLocaleSt
     </div>
 
     <div class="row d-flex">
-      <Projects skillsInstalls={skillsInstalls} />
+      <Projects />
     </div>
 
     <TwoColumnLayout rowClass="align-items-center">
       <div slot="left">
         <img class="bio-headshot" src="/images/headshot.png" alt="Jeff Smolinski headshot" />
         <h3>Jeff Smolinski</h3>
-        <p>
-            Principal Consultant at Synergetic Solutions, specializing in secure platform
-            engineering and GRC programs for organizations handling sensitive data. With an MS
-            in Cybersecurity (Cyber Operations) from UNO, he has led platforms achieving $1M ARR
-            in their first year of operation, implemented SOC 2/HIPAA compliance programs, and
-            secured $375K+ in grant funding. As a security researcher, he has disclosed two CVEs
-            impacting 249 repositories and published peer-reviewed research on software
-            fingerprinting. His open-source projects have over {downloadsLabel} downloads combined.
-          </p>
+        <p>{career.person.bios.short}</p>
       </div>
       <div slot="right">
         <h2 id="ContactMe">Get In Touch</h2>

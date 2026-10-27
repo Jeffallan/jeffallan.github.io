@@ -1,4 +1,8 @@
 ---
+// Renders from the handbook's career facts (site-career, W-11). Change the facts there.
+import career from './site-career/career.json';
+
+const p = career.person;
 ---
 
 <div class="col-md-4 mb-4">
@@ -8,41 +12,72 @@
       <hr />
       <h3>Responsible Vulnerability Disclosures</h3>
       <ul>
-        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42053" target="_blank">CVE-2021-42053</a>
-          <ul>
-            <li>1 library 6 packages and 249 repositories impacted</li>
-          </ul>
-        </li>
-        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-42134" target="_blank">CVE-2021-42134</a>
-          <ul>
-            <li>1 library 6 packages and 249 repositories impacted</li>
-          </ul>
-        </li>
+        {
+          p.vulnerabilities.map((v) => (
+            <li>
+              <a href={v.url} target="_blank">
+                {v.id}
+              </a>{' '}
+              ({v.severity})
+              <ul>
+                <li>{v.summary}.</li>
+                <li>{v.impact}.</li>
+              </ul>
+            </li>
+          ))
+        }
       </ul>
 
       <h3>Publications</h3>
-      <p>W. Mahoney, P. Sigillito, J. Smolinski, T. McDonald, and G. Grispos, "Analyzing the Performance of
-        Block-Splitting in LLVM Fingerprinting," International Conference on Cyber Warfare and Security, vol. 17, no. 1.
-        Academic Conferences International Ltd, pp. 176–184, Mar. 02, 2022. <a href="https://doi.org/10.34190/iccws.17.1.39" target="_blank">doi: 10.34190/iccws.17.1.39</a>.</p>
+      {
+        p.publications.map((pub) => (
+          <p>
+            {pub.citation}{' '}
+            <a href={pub.url} target="_blank">
+              doi: {pub.doi}
+            </a>
+            .
+          </p>
+        ))
+      }
 
       <h3>Competitions</h3>
-      <p><strong><a href="https://ectf.mitre.org/past-competitions/" target="_blank">Embedded Capture the Flag MITRE 2020</a></strong><br />
-        Designing a secure audio digital rights management (DRM) module for a next-generation multimedia player
-        on the Digilent Cora Z7.</p>
+      {
+        p.competitions.map((c) => (
+          <p>
+            <strong>
+              <a href={c.url} target="_blank">
+                {c.name}
+              </a>
+            </strong>
+            <br />
+            {c.text}
+          </p>
+        ))
+      }
       <hr />
 
       <h2 class="text-center">EDUCATION</h2>
       <ul class="list-unstyled">
-        <li class="mb-2">University of Nebraska, Omaha, NE - MS Cybersecurity (Cyber Operations) GPA 4.0</li>
-        <li>Adams State University, Golden, Co - BA General Studies GPA 4.0</li>
+        {
+          p.education.map((e) => (
+            <li class="mb-2">
+              {e.school}, {e.location}: {e.degree}, GPA {e.gpa}
+            </li>
+          ))
+        }
       </ul>
       <hr />
 
       <h2 class="text-center">AWARDS</h2>
-      <div>
-        <p>Certificate of Recognition, Omaha Chamber of Commerce (2017)</p>
-        <p>For teaching 20 small business owners WordPress development.</p>
-      </div>
+      {
+        p.recognition.map((r) => (
+          <div>
+            <p>{r.name}</p>
+            <p>{r.text}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>

@@ -1,4 +1,9 @@
 ---
+// Renders from the handbook's career facts (site-career, W-11). Change the facts there.
+import career from './site-career/career.json';
+
+const job = career.person.experience[0];
+const clients = career.clients.filter((client) => client.resume.length > 0);
 ---
 
 <div class="col-md-8 mb-4">
@@ -6,57 +11,50 @@
     <div class="card-body">
       <h2 class="text-center" id="AboutMe">EXPERIENCE</h2>
       <hr />
-      <h3>Synergetic Solutions, Principal Consultant</h3>
+      <h3>{job.employer}, {job.position}</h3>
+      <p class="text-muted">{job.start} to present</p>
 
       <ul>
-        <li>Providing greenfield and legacy development as a service for client web apps and cloud infrastructure
-          informed by security requirements, threat modeling, and secure code review.</li>
-        <li>Conducting technical due diligence to evaluate security compliance readiness, guide clients through
-          compliance efforts, and deliver technical assessments to inform funding decisions.</li>
-        <li>Driving enterprise customer acquisition by architecting and implementing Governance Risk Compliance
-          programs and authentication infrastructure that eliminate technical barriers in enterprise sales.</li>
+        {job.bullets.map((bullet) => <li>{bullet}</li>)}
       </ul>
 
       <h4 class="mt-4">Notable Clients</h4>
 
-      <div class="client-card mb-3">
-        <h5 class="card-title">AuditMiner - Employee Benefit Plan Audit Platform</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Technologies: Vue JS & Django Rest Framework</h6>
-        <ul>
-          <li>Created an MVP that achieved traction in 3 months.</li>
-          <li>Introduced an Agile project management workflow increasing efficiency by 20 percent.</li>
-          <li>Hired and nurtured engineering talent quadrupling the size of the engineering team.</li>
-          <li>Authored a custom ETL pipeline to process 401(k) and payroll data from over 20 sources saving auditors
-            approximately 30 hours per project.</li>
-          <li>Established a CI/CD pipeline increasing the velocity of delivery by 2x.</li>
-          <li>Developed a full stack web framework achieving over $1 Million ARR the first year.</li>
-          <li>Implemented technical security controls and a SOC II compliance program allowing sales to pursue
-            large, corporate clients and increasing the company's value by 6x.</li>
-        </ul>
-      </div>
+      {
+        clients.map((client) => (
+          <div class="client-card mb-3">
+            <h5 class="card-title">
+              {client.description}
+              {client.role !== 'Consultant' && ` (${client.role})`}
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Technologies: {client.technologies.join(', ')}</h6>
+            <ul>
+              {client.resume.map((i) => (
+                <li>{client.bullets[i].text}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
 
-      <div class="client-card mb-3">
-        <h5 class="card-title">LinearA Data - Hospital Capacity Planning Application</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Technologies: React JS & Golang</h6>
-        <ul>
-          <li>Improved UX with React.js resulting in a 50% increase in customer adoption.</li>
-          <li>Created data collection and matching techniques saving approximately 30 minutes of manual effort per
-            data source.</li>
-          <li>Audited security controls for HIPAA compliance.</li>
-        </ul>
-      </div>
+      <h4 class="mt-4">Products</h4>
 
-      <div class="client-card mb-3">
-        <h5 class="card-title">Raven Security Associates, INC - Physical Security Services</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Technologies: Python, GeoPandas, Typescript, & React JS</h6>
-        <ul>
-          <li>Aggregated, cleaned, geotagged, and geofenced Omaha, NE police incident report data; augmenting corporate
-            threat intelligence and optimizing security staffing.</li>
-          <li>Updated camera systems; laying the foundation for municipal city camera integration.</li>
-          <li>Designed a scheduling, billing, and communication system; fostering rapid client communication and
-            cutting administrative overhead in half.</li>
-        </ul>
-      </div>
+      {
+        career.products.map((product) => (
+          <div class="client-card mb-3">
+            <h5 class="card-title">
+              <a href={product.url} target="_blank" rel="noopener">
+                {product.name}
+              </a>
+            </h5>
+            <ul>
+              {product.bullets.map((bullet) => (
+                <li>{bullet.text}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>

@@ -1,0 +1,525 @@
+{
+  "person": {
+    "id": "https://jeffallan.github.io/#person",
+    "name": "Jeff Smolinski",
+    "alternate_name": "Jeff Allan",
+    "title": "Full-Stack Engineer | Security Engineer",
+    "url": "https://jeffallan.github.io/",
+    "github": "https://github.com/Jeffallan",
+    "bios": {
+      "one_liner": "Principal Consultant at Synergetic Solutions, building and securing software and data systems for organizations that handle sensitive data.",
+      "short": "Jeff Smolinski is Principal Consultant at Synergetic Solutions, where he builds and secures software and data systems for organizations that handle sensitive data. He led an employee benefit plan audit platform from MVP to $1M ARR in its first year, with a SOC 2 program certified in four months, and has helped clients win five Nebraska Innovation Grants totaling more than $375,000. A security researcher with two disclosed CVEs and peer-reviewed research, he holds an MS in Cybersecurity from the University of Nebraska Omaha. His open-source projects have passed 400,000 installs and downloads.",
+      "long": [
+        "Jeff Smolinski is Principal Consultant at Synergetic Solutions, where he builds and secures software and data systems for organizations that handle sensitive data. He holds an MS in Cybersecurity (Cyber Operations) from the University of Nebraska Omaha.",
+        "As a security researcher, Jeff found and disclosed two cross-site scripting vulnerabilities in the Unicorn framework for Django (CVE-2021-42053 and CVE-2021-42134), which affected 249 repositories. He co-authored peer-reviewed research on LLVM fingerprinting, presented at the International Conference on Cyber Warfare and Security in 2022, and designed a secure audio DRM module for MITRE's 2020 Embedded Capture the Flag.",
+        "In client work, he led an employee benefit plan audit platform from MVP to $1M ARR in its first year, building a SOC 2 program that reached certification in four months and sitting on its governance committee. He served as CTO and board member of a scheduling platform, built data pipelines and a public hospital directory for a hospital capacity planning company, and has helped clients win five Nebraska Innovation Grants totaling more than $375,000.",
+        "At Synergetic he built the Trust Center Directory, which tracks the public compliance footprint of more than 8,900+ organizations, and a weekly agentic pipeline that turns real security incidents into tabletop exercises. His open-source work, including claude-skills, a library of 67 Agent Skills for Claude, has passed 400,000 installs and downloads.",
+        "His core competencies are application security, threat modeling, secure code review, reverse engineering, GRC programs (SOC 2, HIPAA, FERPA), data engineering and agentic software delivery."
+      ]
+    },
+    "skills": [
+      {
+        "group": "Languages",
+        "items": [
+          "Python",
+          "JavaScript",
+          "TypeScript",
+          "Go"
+        ]
+      },
+      {
+        "group": "Frameworks",
+        "items": [
+          "Django",
+          "Django REST Framework",
+          "Vue.js",
+          "React",
+          "React Native",
+          "Next.js",
+          "Astro"
+        ]
+      },
+      {
+        "group": "Data",
+        "items": [
+          "PostgreSQL",
+          "Neo4j",
+          "Firebase",
+          "Google BigQuery",
+          "DuckDB",
+          "Parquet",
+          "GeoPandas",
+          "ETL pipelines",
+          "data lakes"
+        ]
+      },
+      {
+        "group": "Cloud & DevOps",
+        "items": [
+          "AWS",
+          "GCP",
+          "Azure",
+          "Docker",
+          "CI/CD"
+        ]
+      },
+      {
+        "group": "Security & compliance",
+        "items": [
+          "application security",
+          "cloud security",
+          "threat modeling",
+          "reverse engineering",
+          "security policy",
+          "secure code review",
+          "vulnerability research",
+          "technical due diligence",
+          "SOC 2",
+          "HIPAA",
+          "FERPA",
+          "GRC"
+        ]
+      },
+      {
+        "group": "Process & leadership",
+        "items": [
+          "Agile / Scrum",
+          "SDLC",
+          "technical leadership",
+          "team building"
+        ]
+      },
+      {
+        "group": "AI",
+        "items": [
+          "Claude (Claude Code",
+          "Claude API)",
+          "Agent Skills",
+          "agentic SDLC workflows"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "org": "synergetic",
+        "employer": "Synergetic Holdings, LLC (Synergetic Solutions)",
+        "position": "Principal Consultant",
+        "start": "2018",
+        "bullets": [
+          "Providing greenfield and legacy development as a service for client web apps and cloud infrastructure informed by security requirements, threat modeling, and secure code review.",
+          "Conducting technical due diligence to evaluate security compliance readiness, guide clients through compliance efforts, and deliver technical assessments to inform funding decisions.",
+          "Driving enterprise customer acquisition by architecting and implementing Governance Risk Compliance programs and authentication infrastructure that eliminate technical barriers in enterprise sales."
+        ]
+      }
+    ],
+    "vulnerabilities": [
+      {
+        "id": "CVE-2021-42053",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-42053",
+        "summary": "Cross-site scripting in the Unicorn framework for Django (through 0.35.3)",
+        "severity": "5.4 Medium (CVSS 3.1)",
+        "impact": "1 library, 6 packages and 249 repositories impacted"
+      },
+      {
+        "id": "CVE-2021-42134",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-42134",
+        "summary": "Cross-site scripting in the Unicorn framework for Django (before 0.36.1), from an incomplete fix for CVE-2021-42053",
+        "severity": "6.1 Medium (CVSS 3.1)",
+        "impact": "1 library, 6 packages and 249 repositories impacted"
+      }
+    ],
+    "competitions": [
+      {
+        "name": "MITRE Embedded Capture the Flag (eCTF), 2020",
+        "url": "https://ectf.mitre.org/past-competitions/",
+        "text": "Designed a secure audio DRM module for a next-generation multimedia player on the Digilent Cora Z7."
+      }
+    ],
+    "publications": [
+      {
+        "citation": "W. Mahoney, P. Sigillito, J. Smolinski, T. McDonald, and G. Grispos, \"Analyzing the Performance of Block-Splitting in LLVM Fingerprinting,\" International Conference on Cyber Warfare and Security, vol. 17, no. 1. Academic Conferences International Ltd, pp. 176–184, Mar. 02, 2022.",
+        "doi": "10.34190/iccws.17.1.39",
+        "url": "https://doi.org/10.34190/iccws.17.1.39"
+      }
+    ],
+    "open_source": [
+      {
+        "name": "claude-skills",
+        "url": "https://github.com/Jeffallan/claude-skills",
+        "count": "437K+ installs",
+        "text": "67 specialized skills for full-stack developers."
+      },
+      {
+        "name": "writing-with-agents",
+        "url": "https://github.com/Jeffallan/writing-with-agents",
+        "count": "167 installs",
+        "text": "A Claude Code plugin for writing with AI, built on Betty Flowers' Madman-Architect-Carpenter-Judge method."
+      },
+      {
+        "name": "badfiles",
+        "url": "https://pypi.org/project/badfiles",
+        "count": "39K+ downloads",
+        "text": "A malicious file detection engine written with Python and Yara."
+      },
+      {
+        "name": "fitness-tools",
+        "url": "https://pypi.org/project/fitness-tools",
+        "count": "21K+ downloads",
+        "text": "A library to help personal trainers optimize client training and macronutrient requirements."
+      }
+    ],
+    "education": [
+      {
+        "degree": "MS Cybersecurity (Cyber Operations)",
+        "school": "University of Nebraska Omaha",
+        "location": "Omaha, NE",
+        "gpa": "4.0"
+      },
+      {
+        "degree": "BA General Studies",
+        "school": "Adams State University",
+        "location": "Alamosa, CO",
+        "gpa": "4.0"
+      }
+    ],
+    "recognition": [
+      {
+        "name": "Certificate of Recognition, Omaha Chamber of Commerce (2017)",
+        "text": "For teaching 20 small business owners WordPress development."
+      }
+    ]
+  },
+  "organization": {
+    "id": "synergetic",
+    "legal_name": "Synergetic Holdings, LLC",
+    "name": "Synergetic Solutions",
+    "url": "https://synergetic.solutions",
+    "naics": [
+      "541512",
+      "541511",
+      "541690"
+    ],
+    "services": [
+      "AI Strategy & Implementation",
+      "Software, Security & Data Engineering",
+      "Incident Response & Remediation",
+      "GRC Strategy & Implementation",
+      "Technical Due Diligence",
+      "SDLC Strategy & Implementation",
+      "Fractional CTO & CISO Services"
+    ],
+    "competencies": [
+      "We build and secure the software, data and governance processes our clients' core operations depend on",
+      "We bring experience from fintech, healthtech, public safety, and embedded systems"
+    ],
+    "differentiators": [
+      "Our principal has served as CTO and board member of a client company and has led client GRC programs in a fractional CISO role",
+      "We take a collaborative, proactive approach when solving our clients' challenges, resulting in practical solutions ensuring both client satisfaction and business continuity",
+      "Agentic SDLC delivery: one developer averaging 80+ tickets and 12 merged pull requests a week per project, with every phase leaving a reviewable artifact",
+      "Legacy codebase intake: preparing legacy codebases for agentic development with a repeatable procedure including proper documentation, unit tests, end-to-end tests, and security tests"
+    ],
+    "industries": [
+      "FinTech",
+      "Media & Entertainment",
+      "HealthTech",
+      "Public Safety & Security",
+      "InsuranceTech"
+    ],
+    "statements": [
+      {
+        "text": "Implementing a security compliance program that achieved SOC 2 certification in 4 months"
+      },
+      {
+        "text": "Architecting and maintaining large-scale datasets supporting multi-million dollar business decisions"
+      },
+      {
+        "text": "Helping clients win $375K+ across 5 Nebraska Innovation Grant awards, one recipient scaling from MVP to $1M ARR in a year"
+      },
+      {
+        "text": "Discovering and responsibly disclosing software vulnerabilities"
+      },
+      {
+        "text": "Leading incident response and forensic investigations for production security incidents"
+      },
+      {
+        "text": "Co-authoring peer-reviewed research published at the International Conference on Cyber Warfare and Security"
+      },
+      {
+        "text": "Conducting technical due diligence to validate product ownership and investment readiness"
+      },
+      {
+        "text": "Designing and implementing SDLC frameworks for 5+ organizations, reducing time-to-deployment through CI/CD automation and Agile adoption"
+      },
+      {
+        "text": "Developing custom ETL pipelines across healthcare, fintech, and security sectors, establishing the data foundations required for AI and machine learning adoption"
+      },
+      {
+        "text": "Shipping multiple mobile applications from concept to app store deployment within 4 months"
+      },
+      {
+        "text": "Building and publishing a compliance-signal directory covering 8,900+ organizations"
+      },
+      {
+        "text": "Publishing a library of incident response and disaster recovery tabletop scenarios drawn from current incidents"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "id": "client-1",
+      "description": "Employee benefit plan audit platform",
+      "industry": "FinTech",
+      "role": "Consultant",
+      "status": "past",
+      "technologies": [
+        "Vue.js",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Pandas",
+        "openpyxl",
+        "Microsoft Azure"
+      ],
+      "bullets": [
+        {
+          "text": "Built an MVP that gained traction within 3 months."
+        },
+        {
+          "text": "Introduced an Agile workflow that raised team efficiency by 20%."
+        },
+        {
+          "text": "Hired and mentored engineers, growing the engineering team fourfold."
+        },
+        {
+          "text": "Wrote a custom ETL pipeline for 401(k) and payroll data from 20+ sources, saving auditors about 30 hours per project."
+        },
+        {
+          "text": "Set up CI/CD, doubling delivery speed."
+        },
+        {
+          "text": "Led development of the platform, which reached $1M ARR in its first year."
+        },
+        {
+          "text": "Implemented security controls and a SOC 2 program, opening enterprise sales and raising company value sixfold."
+        },
+        {
+          "text": "Led the GRC program and sat on the governance committee, filling the fractional CISO role."
+        }
+      ],
+      "resume": [
+        5,
+        6,
+        7,
+        3
+      ]
+    },
+    {
+      "id": "client-2",
+      "description": "Sports team communication platform",
+      "industry": "Media & Entertainment",
+      "role": "Consultant",
+      "status": "current",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "React Native",
+        "PostgreSQL",
+        "GCP",
+        "Firebase",
+        "Terraform",
+        "Claude Code"
+      ],
+      "bullets": [
+        {
+          "text": "Helped the client win $75,000 in grant funding for prototype development."
+        },
+        {
+          "text": "Shipped the mobile app to both app stores within 4 months."
+        },
+        {
+          "text": "Implemented an agentic SDLC with technical discovery, requirements engineering, test-first delivery, security review and acceptance testing."
+        },
+        {
+          "text": "Found and fixed security vulnerabilities inherited from a legacy Replit codebase."
+        },
+        {
+          "text": "Building a GRC program for SOC 2 and FERPA compliance.",
+          "status": "in-progress"
+        },
+        {
+          "text": "Product-market fit validation, go-to-market strategy and a custom advertising network for monetization.",
+          "status": "in-progress"
+        },
+        {
+          "text": "Averaged 80+ tickets and 12 merged pull requests a week using an agentic SDLC."
+        }
+      ],
+      "resume": [
+        6,
+        1,
+        3
+      ]
+    },
+    {
+      "id": "client-3",
+      "description": "Hospital capacity planning application",
+      "industry": "HealthTech",
+      "role": "Consultant",
+      "status": "current",
+      "technologies": [
+        "React",
+        "Go",
+        "GCP",
+        "Firebase",
+        "Google BigQuery",
+        "Claude Code"
+      ],
+      "bullets": [
+        {
+          "text": "Improved the UX in React, raising customer adoption by 50%."
+        },
+        {
+          "text": "Built data collection and matching methods that save about 30 minutes of manual work per data source."
+        },
+        {
+          "text": "Extended the ETL pipeline to ingest large CMS (Centers for Medicare & Medicaid Services) datasets."
+        },
+        {
+          "text": "Curated and restructured a legacy data lake, laying the groundwork for AI and machine learning."
+        },
+        {
+          "text": "Tied Stripe subscription status to role-based access control for billing and permissions."
+        },
+        {
+          "text": "Designed multi-tenant support so organizations can manage employee accounts and share project data."
+        },
+        {
+          "text": "Built public hospital directory from CMS cost report data (HCRIS), using an agentic SDLC workflow."
+        }
+      ],
+      "resume": [
+        0,
+        1,
+        6
+      ]
+    },
+    {
+      "id": "client-4",
+      "description": "Physical security services company",
+      "industry": "Public Safety & Security",
+      "role": "Consultant",
+      "status": "current",
+      "technologies": [
+        "Python",
+        "GeoPandas",
+        "TypeScript",
+        "React",
+        "PostgreSQL",
+        "Private VPS"
+      ],
+      "bullets": [
+        {
+          "text": "Aggregated, cleaned, geotagged and geofenced Omaha, NE police incident data to strengthen the company's threat intelligence and staffing decisions."
+        },
+        {
+          "text": "Modernized client camera systems, laying the foundation for Flock Safety municipal camera network integration."
+        },
+        {
+          "text": "Designed a scheduling, billing and communication system that sped up client communication and halved administrative overhead."
+        }
+      ],
+      "resume": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "client-5",
+      "description": "Scheduling platform connecting entertainers with retirement communities",
+      "industry": "Media & Entertainment",
+      "role": "CTO and board member",
+      "status": "concluded",
+      "technologies": [
+        "Next.js",
+        "Neo4j",
+        "Private VPS",
+        "Claude Code"
+      ],
+      "bullets": [
+        {
+          "text": "Served as CTO and board member, guiding technical implementation and market strategy."
+        },
+        {
+          "text": "Designed infrastructure for 20% annual user growth, with network activity doubling each year."
+        },
+        {
+          "text": "Developed a data cleaning and migration strategy for the Neo4j graph database."
+        },
+        {
+          "text": "Implemented an agentic SDLC with technical discovery, requirements engineering, test-first delivery, security review and acceptance testing."
+        },
+        {
+          "text": "Designed an SDK and v2 API for wider adoption in the scheduling space, using Neo4j's graph features for real-time availability and location intelligence."
+        }
+      ],
+      "resume": [
+        0,
+        1,
+        4
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "trust-center-directory",
+      "order": 1,
+      "name": "Trust Center Directory",
+      "owner": "synergetic",
+      "url": "https://synergetic.solutions/resources/trust-center-directory/",
+      "dataset": "https://github.com/synergetic-solutions/trust-index-data",
+      "status": "current",
+      "technologies": [
+        "Python",
+        "DuckDB",
+        "Common Crawl",
+        "Claude API",
+        "Parquet",
+        "Google Cloud Storage",
+        "Google BigQuery"
+      ],
+      "description": "A public directory of organizations with a public compliance footprint.",
+      "bullets": [
+        {
+          "text": "Built and run a public directory of 8,900+ organizations with a public compliance footprint, refreshed monthly."
+        },
+        {
+          "text": "Designed the data pipeline: Common Crawl via DuckDB, DNS discovery, parsers for four trust-center platforms, Claude-based classification, and Parquet snapshots in GCS and BigQuery."
+        },
+        {
+          "text": "Published an open-core dataset (CC BY 4.0) with versioned releases and evidence-checked community corrections."
+        }
+      ]
+    },
+    {
+      "id": "tabletop-scenario-library",
+      "order": 2,
+      "name": "Tabletop Scenario Library",
+      "owner": "synergetic",
+      "url": "https://synergetic.solutions/resources/tabletop-scenarios/",
+      "status": "current",
+      "technologies": [
+        "Claude Code",
+        "Agent Skills",
+        "GitHub Actions",
+        "Astro",
+        "Cloudflare Pages"
+      ],
+      "description": "Incident response and disaster recovery tabletop exercises drawn from current incidents.",
+      "bullets": [
+        {
+          "text": "Built a weekly agentic content pipeline turning real security incidents into tabletop exercise scenarios: scheduled Claude intake with review and greenlight steps, lint and rubric checks enforced in code, and automated publishing and social export."
+        }
+      ]
+    }
+  ]
+}

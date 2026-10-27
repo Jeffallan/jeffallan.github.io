@@ -1,47 +1,35 @@
 ---
-interface Props {
-  skillsInstalls?: string;
-}
+// Renders from the handbook's career facts (site-career, W-11). Change the facts there.
+import career from './site-career/career.json';
 
-const { skillsInstalls = '' } = Astro.props;
+const host = (url: string) => (url.includes('pypi.org') ? 'PyPI' : 'GitHub');
 ---
 
 <div class="col-12 jumbotron">
   <h2 class="text-center" id="Projects">Open Source Projects</h2>
   <div class="row mt-5">
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">claude-skills</h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            <a href="https://github.com/hesreallyhim/awesome-claude-code"><img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" /></a>{' '}
-            {skillsInstalls && <img src={`https://img.shields.io/badge/downloads-${skillsInstalls}-blue`} alt={`${skillsInstalls} downloads`} class="ml-2" />}
-          </h6>
-          <p class="card-text">Specialized skills for full-stack developers. Transform Claude Code into your expert pair programmer.</p>
-          <a href="https://github.com/Jeffallan/claude-skills" class="card-link">View on GitHub</a>
+    {
+      career.person.open_source.map((project) => (
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{project.name}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {project.name === 'claude-skills' && (
+                  <a href="https://github.com/hesreallyhim/awesome-claude-code">
+                    <img src="https://awesome.re/mentioned-badge.svg" height="28" alt="Mentioned in Awesome Claude Code" />
+                  </a>
+                )}{' '}
+                {project.count}
+              </h6>
+              <p class="card-text">{project.text}</p>
+              <a href={project.url} class="card-link">
+                View on {host(project.url)}
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">badfiles</h5>
-          <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/badfiles" alt="badfiles downloads" /></h6>
-          <p class="card-text">A malicious file detection engine written with Python and Yara.</p>
-          <a href="https://pypi.org/project/badfiles" class="card-link">View on PyPI</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">fitness-tools</h5>
-          <h6 class="card-subtitle mb-2 text-muted"><img src="https://static.pepy.tech/badge/fitness-tools" alt="fitness-tools downloads" /></h6>
-          <p class="card-text">A library to help personal trainers optimize client training and macronutrient
-            requirements.</p>
-          <a href="https://pypi.org/project/fitness-tools" class="card-link">View on PyPI</a>
-        </div>
-      </div>
-    </div>
+      ))
+    }
   </div>
 </div>
