@@ -13,7 +13,7 @@
         "Jeff Smolinski is Principal Consultant at Synergetic Solutions, where he builds and secures software and data systems for organizations that handle sensitive data. He holds an MS in Cybersecurity (Cyber Operations) from the University of Nebraska Omaha.",
         "As a security researcher, Jeff found and disclosed two cross-site scripting vulnerabilities in the Unicorn framework for Django (CVE-2021-42053 and CVE-2021-42134), which affected 249 repositories. He co-authored peer-reviewed research on LLVM fingerprinting, presented at the International Conference on Cyber Warfare and Security in 2022, and designed a secure audio DRM module for MITRE's 2020 Embedded Capture the Flag.",
         "In client work, he led an employee benefit plan audit platform from MVP to $1M ARR in its first year, building a SOC 2 program that reached certification in four months and sitting on its governance committee. He served as CTO and board member of a scheduling platform, built data pipelines and a public hospital directory for a hospital capacity planning company, and has helped clients win five Nebraska Innovation Grants totaling more than $375,000.",
-        "At Synergetic he built the Trust Center Directory, which tracks the public compliance footprint of more than 8,000+ organizations, and a weekly agentic pipeline that turns real security incidents into tabletop exercises. His open-source work, including claude-skills, a library of 67 Agent Skills for Claude, has passed 400,000 installs and downloads.",
+        "At Synergetic he built the Trust Center Directory, which tracks the public compliance footprint of more than 8,900+ organizations, and a weekly agentic pipeline that turns real security incidents into tabletop exercises. His open-source work, including claude-skills, a library of 67 Agent Skills for Claude, has passed 400,000 installs and downloads.",
         "His core competencies are application security, threat modeling, secure code review, reverse engineering, GRC programs (SOC 2, HIPAA, FERPA), data engineering and agentic software delivery."
       ]
     },
@@ -146,7 +146,7 @@
       {
         "name": "claude-skills",
         "url": "https://github.com/Jeffallan/claude-skills",
-        "count": "436K+ installs",
+        "count": "437K+ installs",
         "text": "67 specialized skills for full-stack developers."
       },
       {
@@ -201,8 +201,7 @@
     ],
     "services": [
       "AI Strategy & Implementation",
-      "Data Engineering",
-      "Security Engineering",
+      "Software, Security & Data Engineering",
       "Incident Response & Remediation",
       "GRC Strategy & Implementation",
       "Technical Due Diligence",
@@ -210,14 +209,14 @@
       "Fractional CTO & CISO Services"
     ],
     "competencies": [
-      "We build and secure the software, data and governance processes our clients' core operations depend on.",
-      "We bring experience from fintech, healthtech, public safety, and embedded systems."
+      "We build and secure the software, data and governance processes our clients' core operations depend on",
+      "We bring experience from fintech, healthtech, public safety, and embedded systems"
     ],
     "differentiators": [
-      "Our principal has served as CTO and board member of a client company and has led client GRC programs in a fractional CISO role.",
-      "We take a collaborative, proactive approach when solving our clients' challenges. The end result: practical solutions ensuring both client satisfaction and business continuity.",
-      "Agentic SDLC delivery: one developer averaging 80+ tickets and 12 merged pull requests a week per project, with every phase leaving a reviewable artifact.",
-      "Legacy codebase intake: preparing legacy codebases for agentic development with a repeatable procedure including proper documentation, unit tests, end-to-end tests, and security tests."
+      "Our principal has served as CTO and board member of a client company and has led client GRC programs in a fractional CISO role",
+      "We take a collaborative, proactive approach when solving our clients' challenges, resulting in practical solutions ensuring both client satisfaction and business continuity",
+      "Agentic SDLC delivery: one developer averaging 80+ tickets and 12 merged pull requests a week per project, with every phase leaving a reviewable artifact",
+      "Legacy codebase intake: preparing legacy codebases for agentic development with a repeatable procedure including proper documentation, unit tests, end-to-end tests, and security tests"
     ],
     "industries": [
       "FinTech",
@@ -258,7 +257,7 @@
         "text": "Shipping multiple mobile applications from concept to app store deployment within 4 months"
       },
       {
-        "text": "Building and publishing a compliance-signal directory covering 8,000+ organizations"
+        "text": "Building and publishing a compliance-signal directory covering 8,900+ organizations"
       },
       {
         "text": "Publishing a library of incident response and disaster recovery tabletop scenarios drawn from current incidents"
@@ -491,7 +490,7 @@
       "description": "A public directory of organizations with a public compliance footprint.",
       "bullets": [
         {
-          "text": "Built and run a public directory of 8,000+ organizations with a public compliance footprint, refreshed monthly."
+          "text": "Built and run a public directory of 8,900+ organizations with a public compliance footprint, refreshed monthly."
         },
         {
           "text": "Designed the data pipeline: Common Crawl via DuckDB, DNS discovery, parsers for four trust-center platforms, Claude-based classification, and Parquet snapshots in GCS and BigQuery."
