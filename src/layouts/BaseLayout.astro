@@ -5,19 +5,18 @@ import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
 import career from '../components/site-career/career.json';
 import profile from '../components/site-footer/profile.json';
 import { hubGraph } from '../components/site-seo/graph.mjs';
+import { ogImagePath } from '../components/site-seo/card.mjs';
+import { PAGES } from '../page-meta';
 
 interface Props {
-  title?: string;
-  description?: string;
+  page?: keyof typeof PAGES;
 }
 
-const {
-  title = 'Jeff Smolinski | Fullstack and Security Engineer',
-  description = 'Jeff Smolinski builds secure platforms and GRC programs for organizations that handle sensitive data. Principal Consultant at Synergetic Solutions.',
-} = Astro.props;
+const { page = 'index' } = Astro.props;
+const { title, card, description } = PAGES[page];
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const image = new URL('/images/headshot.png', Astro.site);
+const image = new URL(ogImagePath(Astro.url.pathname, '/'), Astro.site);
 // The Person node the other sites point at (D-009)
 const graph = hubGraph({
   career,
@@ -58,8 +57,11 @@ const graph = hubGraph({
     description={description}
     canonical={canonical}
     ogImage={image.href}
+    ogImageAlt={card}
+    ogImageWidth={1200}
+    ogImageHeight={630}
     siteName="Jeff Smolinski"
-    twitter={{ card: 'summary' }}
+    twitter={{ card: 'summary_large_image' }}
     graph={graph}
   />
 </head>
