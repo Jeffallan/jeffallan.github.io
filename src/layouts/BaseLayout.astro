@@ -1,6 +1,10 @@
 ---
 import '../components/site-style/tokens.css';
 import ThemeScript from '../components/site-style/ThemeScript.astro';
+import Seo from '@jdevalk/astro-seo-graph/Seo.astro';
+import career from '../components/site-career/career.json';
+import profile from '../components/site-footer/profile.json';
+import { hubGraph } from '../components/site-seo/graph.mjs';
 
 interface Props {
   title?: string;
@@ -14,6 +18,13 @@ const {
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const image = new URL('/images/headshot.png', Astro.site);
+// The Person node the other sites point at (D-009)
+const graph = hubGraph({
+  career,
+  profile,
+  knowsAbout: ['SOC 2', 'HIPAA', 'FERPA', 'data engineering', 'security engineering'],
+  page: { url: canonical.href, title, description, isHome: Astro.url.pathname === '/' },
+});
 ---
 
 <!DOCTYPE html>
@@ -42,18 +53,15 @@ const image = new URL('/images/headshot.png', Astro.site);
   <link rel="stylesheet" href="/styles/main.css" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonical} />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
-  <meta name="twitter:card" content="summary" />
-
-  <!-- JSON-LD graph (Person, WebSite) goes here: W-08 -->
+  <Seo
+    title={title}
+    description={description}
+    canonical={canonical}
+    ogImage={image.href}
+    siteName="Jeff Smolinski"
+    twitter={{ card: 'summary' }}
+    graph={graph}
+  />
 </head>
 
 <body id="PageTop">
