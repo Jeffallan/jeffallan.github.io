@@ -1,9 +1,10 @@
 ---
 // Renders from the handbook's career facts (site-career, W-11). Change the facts there.
 import career from './site-career/career.json';
+import { notableProjects } from '../notable-projects';
 
 const job = career.person.experience[0];
-const clients = career.clients.filter((client) => client.resume.length > 0);
+const projects = notableProjects(career);
 ---
 
 <div class="col-md-8 mb-4">
@@ -18,43 +19,88 @@ const clients = career.clients.filter((client) => client.resume.length > 0);
         {job.bullets.map((bullet) => <li>{bullet}</li>)}
       </ul>
 
-      <h4 class="mt-4">Notable Clients</h4>
+      <h4 class="mt-4">Notable Projects</h4>
 
       {
-        clients.map((client) => (
-          <div class="client-card mb-3">
+        projects.map((project) => (
+          <article class="notable-project client-card mb-3">
             <h5 class="card-title">
-              {client.description}
-              {client.role !== 'Consultant' && ` (${client.role})`}
+              {project.url ? (
+                <a href={project.url} target="_blank" rel="noopener">
+                  {project.title}
+                </a>
+              ) : (
+                project.title
+              )}
             </h5>
-            <h6 class="card-subtitle mb-2 text-muted">Technologies: {client.technologies.join(', ')}</h6>
-            <ul>
-              {client.resume.map((i) => (
-                <li>{client.bullets[i].text}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
-
-      <h4 class="mt-4">Products</h4>
-
-      {
-        career.products.map((product) => (
-          <div class="client-card mb-3">
-            <h5 class="card-title">
-              <a href={product.url} target="_blank" rel="noopener">
-                {product.name}
-              </a>
-            </h5>
-            <ul>
-              {product.bullets.map((bullet) => (
-                <li>{bullet.text}</li>
-              ))}
-            </ul>
-          </div>
+            <h6 class="card-subtitle mb-2 text-muted">Technologies: {project.technologies}</h6>
+            <details class="notable-details">
+              <summary>Details</summary>
+              <ul>
+                {project.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+            </details>
+          </article>
         ))
       }
     </div>
   </div>
 </div>
+
+<style>
+  .notable-details summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.15rem 0;
+    font-family: var(--site-font-heading);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--site-accent-ui);
+    cursor: pointer;
+    list-style: none;
+    border-radius: 4px;
+  }
+
+  .notable-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Chevron: points right when closed, down when open */
+  .notable-details summary::before {
+    content: '';
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+  }
+
+  .notable-details[open] summary::before {
+    transform: rotate(45deg);
+  }
+
+  .notable-details summary:hover {
+    color: var(--site-accent-strong);
+  }
+
+  .notable-details summary:focus-visible {
+    outline: 2px solid var(--site-accent-ui);
+    outline-offset: 3px;
+  }
+
+  .notable-details ul {
+    margin: 0.75rem 0 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--site-border);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .notable-details summary::before {
+      transition: none;
+    }
+  }
+</style>
