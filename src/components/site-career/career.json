@@ -16,6 +16,22 @@
         "His core competencies are application security, threat modeling, secure code review, reverse engineering, GRC programs (SOC 2, HIPAA, FERPA), data engineering and agentic software delivery."
       ]
     },
+    "knows_about": [
+      "Information security",
+      "Application security",
+      "Governance, risk and compliance",
+      "Vulnerability research",
+      "Incident response",
+      "Disaster recovery",
+      "Physical security",
+      "SecDevOps",
+      "Reverse engineering",
+      "Software engineering",
+      "Data engineering",
+      "Cloud computing",
+      "Technical due diligence",
+      "AI-assisted software development"
+    ],
     "skills": [
       {
         "group": "Languages",
@@ -41,6 +57,7 @@
       {
         "group": "Data",
         "items": [
+          "data engineering",
           "PostgreSQL",
           "Neo4j",
           "Firebase",
@@ -65,6 +82,7 @@
       {
         "group": "Security & compliance",
         "items": [
+          "security engineering",
           "application security",
           "cloud security",
           "threat modeling",
