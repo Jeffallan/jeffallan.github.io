@@ -21,7 +21,6 @@ const image = new URL(ogImagePath(Astro.url.pathname, '/'), Astro.site);
 const graph = hubGraph({
   career,
   profile,
-  knowsAbout: ['SOC 2', 'HIPAA', 'FERPA', 'data engineering', 'security engineering'],
   page: { url: canonical.href, title, description, isHome: Astro.url.pathname === '/' },
 });
 ---
