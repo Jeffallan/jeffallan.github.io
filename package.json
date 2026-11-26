@@ -14,7 +14,7 @@
     "@fontsource/source-sans-3": "^5.3.1",
     "@iconify-json/simple-icons": "^1.2.101",
     "@jdevalk/astro-seo-graph": "^2.2.0",
-    "astro": "^7.4.8",
+    "astro": "^7.4.12",
     "astro-icon": "^1.2.0",
     "astro-og-canvas": "^0.13.3"
   }

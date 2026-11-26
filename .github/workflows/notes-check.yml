@@ -1,0 +1,26 @@
+# Delivered by the handbook (Copier). Checks the front matter of the notes in notes_paths against
+# the Base Schema profile in notes_schema, read from .copier-answers.yml when it runs.
+name: Notes check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notes:
+    name: Check Notes Front Matter
+    runs-on: ${{ fromJSON(vars.RUNNER_LABELS || '["ubuntu-latest"]') }}
+    env:
+      UV_LINK_MODE: copy  # uv's clone into its cache hits EAGAIN (os error 11) on self-hosted NAS runners
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+      - name: Check notes
+        run: uv run .handbook/base-schema/check-notes.py --from-answers
